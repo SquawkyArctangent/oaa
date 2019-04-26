@@ -1,0 +1,105 @@
+"DOTAUnits"
+{
+//=================================================================================
+// Boss tier 1
+//=================================================================================
+  "npc_dota_boss_bullethell"
+  {
+    // General
+    //
+    "BaseClass"                                           "npc_dota_creep_neutral" // Class of entity of link to.
+    "Model"                                               "models/heroes/shadow_fiend/shadow_fiend.vmdl"  // Model.
+    "vscripts"                                            "units/ai_bullethell.lua"
+    "SoundSet"                                            "axe"                    // Name of sound set.
+    "ModelScale"                                          "2.1"
+    "Level"                                               "30"
+    "IsAncient"                                           "1"
+    "ConsideredHero"                                      "1"
+
+    // Abilities
+    //----------------------------------------------------------------
+    "Ability1"                                            "boss_bullethell_wave"
+    "Ability2"                                            "boss_resistance"
+    "Ability3"                                            "boss_cliffwalk"
+    "Ability4"                                            "boss_regen"
+    "Ability8"                                            "siltbreaker_boss_protection"
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"                                       "25"            // Physical protection.
+    "MagicalResistance"                                   "-50"           // Magical protection (percentage).
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"                                  "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "ProjectileModel"                                     "particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+    "AttackDamageMin"                                     "2450"       // Damage range min.
+    "AttackDamageMax"                                     "2500"       // Damage range max.
+    "AttackDamageType"                                    "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"                                          "2.0"           // Speed of attack.
+    "AttackAnimationPoint"                                "0.5"       // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"                              "625"       // Range within a target can be acquired.
+    "AttackRange"                                         "625"       // Range within a target can be attacked.
+    "ProjectileSpeed"                                     "1200"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"                                            "3000"  // Experience earn.
+    "BountyGoldMin"                                       "0"     // Gold earned min.
+    "BountyGoldMax"                                       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"                                      "DOTA_HULL_SIZE_HERO"           // Hull type used for navigation/locomotion.
+    "RingRadius"                                          "110"
+    "HealthBarOffset"                                     "400"
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"                                "DOTA_UNIT_CAP_MOVE_NONE"         // Type of locomotion - ground, air
+    "MovementSpeed"                                       "0"       // Speed
+    "MovementTurnRate"                                    "0.8"       // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"                                        "8500"     // Base health
+    "StatusHealthRegen"                                   "5.0"        // Health regeneration rate.
+    "StatusMana"                                          "100000"     // Base mana.
+    "StatusManaRegen"                                     "0"     // Mana regeneration rate.
+
+    // Creature data
+
+    "Creature"
+    {
+        //Makes it only have 50% remaining of applied crowd control
+        "DisableResistance"                                 "50.0"
+        "AttachWearables" // Default npc_dota_hero_nevermore
+        {
+            "1" { "ItemDef" "387" } // Shadow Fiend's Head
+            "2" { "ItemDef" "486" } // Shadow Fiend's Shoulders
+            "3" { "ItemDef" "509" } // Shadow Fiend's Ambient Effects
+            "4" { "ItemDef" "488" } // Shadow Fiend's Arms
+        }
+    }
+
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                                            "DOTA_TEAM_NEUTRALS"            // Team name.
+    "CombatClassAttack"                                   "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"                                   "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    "UnitRelationshipClass"                               "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"                                  "1400"      // Range of vision during day light.
+    "VisionNighttimeRange"                                "1400"      // Range of vision at night time.
+
+    // Inventory
+    //----------------------------------------------------------------
+    "HasInventory"                                        "1"
+
+    "MinimapIcon"                                         "minimap_roshancamp"
+    "MinimapIconSize"                                     "450"
+  }
+}

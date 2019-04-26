@@ -1,0 +1,164 @@
+"DOTAAbilities"
+{
+    //=================================================================================================================
+    // Bullethell Boss: Wave
+    //=================================================================================================================
+    "boss_bullethell_wave"
+    {
+        "ID"                            "129000"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "AbilityTextureName"            "nevermore_shadowraze1"
+        "ScriptFile"                    "abilities/bullethell/boss_bullethell_wave.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "AnimationIgnoresModelScale"    "1"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.55"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "15.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "0"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage"                    "2000"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "raze_radius"               "250"
+            }
+            "03"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "raze_interval"             "0.334"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "wave_speed"                "250"
+            }
+            // "rank" is used as a percentage multiplier on how often razes are created with a wave
+            // as well as how many waves are made
+            // rank is based on missing health, 100% health = min, 0% health = max
+            // there's also a separate rank for cd
+            "05"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "rank_density_min"          "90"
+            }
+            "06"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "rank_density_max"          "300"
+            }
+            "07"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "rank_cooldown_min"         "100"
+            }
+            "08"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "rank_cooldown_max"         "175"
+            }
+            "09"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "curse_duration"         	"90.0"
+            }
+            "10"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "curse_mr_shred"         	"-20"
+            }
+            "11"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "pattern_duration"          "10.0"
+            }
+            "12"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "arena_radius"              "640"
+            }
+            // specific kv for different patterns
+            // while these patterns could, in theory, be different abilities
+            // ... i am atan
+            "grid_01"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "grid_wave_delay"           "1.0"
+            }
+            "grid_02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "grid_wave_count"           "2"
+            }
+            "grid_03"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "grid_arena_width"          "768"
+            }
+            "vacuum_01"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "vacuum_wave_delay"         "0.8"
+            }
+            "vacuum_02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "vacuum_wave_count"         "1"
+            }
+            "ring_01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "ring_rank_per_raze"        "100"
+            }
+            "ring_02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "ring_rank_per_ring"        "70"
+            }
+            "ring_03"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "ring_distance_per_ring"    "200"
+            }
+            "ring_04"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "ring_min_distance"         "175"
+            }
+            "ring_05"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "ring_max_distance"         "800"
+            }
+        }
+
+        "precache"
+        {
+            "particle" "particles/units/heroes/hero_nevermore/nevermore_shadowraze.vpcf"
+            "particle" "particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_neveremore.vsndevts"
+        }
+    }
+}

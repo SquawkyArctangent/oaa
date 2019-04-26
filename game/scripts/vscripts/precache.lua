@@ -50,7 +50,9 @@ g_UnitPrecache = {
   "npc_dota_creature_small_lycosidae",
   "npc_dota_creature_spider_boss",
   "npc_dota_boss_spiders",
-  "npc_dota_boss_swiper"
+  "npc_dota_boss_swiper",
+
+  "npc_dota_boss_bullethell"
 }
 
 g_ModelPrecache = {
